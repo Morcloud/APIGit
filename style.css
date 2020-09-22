@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    height: auto;
+    padding: 10% 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #f1f1f1;
+}
+
+.entrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* width: 200px; */
+    /* border: 1px solid red; */
+}
+
+.entrada__usuario {
+    font-size: 2rem;
+}
+
+.entrada input, .salida .filtro input{
+    margin: 25px 0;
+    width: 70%;
+    padding: 10px;
+    border:1px solid #747474;
+    background-color: #f1f1f1;
+    color: #bababa;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.entrada input:focus, .salida .filtro input:focus {
+    background-color: white;
+    color: #232323;
+    border: 1px solid #232323;
+    outline: none;
+}
+
+.entrada button, .salida .filtro button {
+    padding: 10px 0;
+    width: 70%;
+    background-color: #232323;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.salida {
+    /* margin-top: 30px; */
+    padding: 0 3%;
+    display: grid;
+    grid-template-columns: 35% repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    /* justify-content: center; */
+    gap: 3%;
+    border: 1px solid red;
+}
+
+.salida .container {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.salida .container h1 {
+    font-weight: lighter;
+    font-size: 28px;
+}
+
+.salida .container h2 {
+    font-weight: 400;
+    font-size: 21px;
+}
+
+.salida .container figure {
+    width: 50%;
+}
+
+.salida .container figure img {
+    border-radius: 100px;
+    width: 100%;
+}
+
+.salida .repo {
+    grid-column: 1 /  span 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 auto;
+    padding: 0 40px;
+    background-color: white;
+    box-shadow: 4px 4px 3px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.salida .repo p {
+    margin: 15px 0;
+    font-weight: 300;
+    color: #232323;
+    /* background-color: white; */
+}
+
+/* .salida .repo p::after {
+    content: " | ";
+    margin: 0 10px;
+    opacity: .4;
+}
+
+.salida .repo p:last-of-type::after {
+    content: "";
+} */
+
+.salida .filtro {
+    margin: 0 auto;
+    grid-column: 2 / span 1;
+    align-self: flex-start;
+}
+
+.salida .filtro input, .salida .filtro button {
+    width: 100%;
+}
+
+.salida #filtro__resultados {
+    grid-column: 3 / span 2;
+    align-self: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 auto;
+    padding: 0 40px;
+    background-color: white;
+    box-shadow: 4px 4px 3px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+#filtro__resultados p {
+    margin: 15px 0;
+    font-weight: 300;
+    color: #232323;
+}
+
+@media screen and (max-width:767px) {
+    .salida {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 350px 180px 1fr;
+        gap: 1.5%;
+    }
+
+    .salida .repo {
+        grid-column: 1 / 2;
+        grid-row: 2 / -1;
+        height: 540px;
+        align-self: flex-start;
+        overflow-y: scroll;
+    }
+
+    .salida #filtro__resultados {
+        height: 345px;
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        align-self: flex-start;
+        overflow-y: scroll;
+    }
+
+}

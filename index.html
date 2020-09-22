@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="/css/estilo.css"> -->
+    <title>GithubAPI</title>
+</head>
+<body>
+    <main>
+        <section class="entrada">
+            <lbl class="entrada__usuario" for="usuario">Usuario de Github</lbl>
+            <input type="text" name="user" id="usuario" placeholder="Nombre de usuario">
+            <button id="user" onclick="traer()">Consultar</button>
+        </section>
+        <section class="salida">
+            <!-- <h2>Repositorios</h2> -->
+            <div class="container">
+                <h1 class="titulo" id="titulo"></h1>
+                <figure>
+                    <img id="fotografia" src="" alt="">
+                </figure>
+                <h2 class="nombre" id="nombre"></h2>
+            </div>
+            <div class="repo" id="repo"></div>
+            <div class="filtro">
+                <h3>Búsqueda por lenguaje</h3>
+                <input id="boton" type="text" placeholder="JavaScript">
+                <button id="prueba" onclick="mostrar()">Buscar</button>
+            </div>
+            <article id="filtro__resultados">
+                <!-- <p id="filtro__resultados"></p> -->
+            </article>
+        </section>
+    </main>
+    <script src="/index.js"></script>
+</body>
+</html>
