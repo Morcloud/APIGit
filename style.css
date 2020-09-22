@@ -64,7 +64,7 @@ main {
     justify-items: center;
     /* justify-content: center; */
     gap: 3%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .salida .container {
