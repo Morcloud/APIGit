@@ -1,10 +1,5 @@
 
-// function consumiendo(user) {
-//     const ruta = 'https://api.github.com'
-//     fetch(`${ruta}/users/${user}`)
-//         .then(response => response.json())
-//         .then(json => console.log(json))
-// }
+
 let datos
 
 function user(user) {
