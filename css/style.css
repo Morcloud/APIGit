@@ -19,8 +19,6 @@ main {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* width: 200px; */
-    /* border: 1px solid red; */
 }
 
 .entrada__usuario {
@@ -56,15 +54,12 @@ main {
 }
 
 .salida {
-    /* margin-top: 30px; */
     padding: 0 3%;
     display: grid;
     grid-template-columns: 35% repeat(3, 1fr);
     align-items: center;
     justify-items: center;
-    /* justify-content: center; */
     gap: 3%;
-    /* border: 1px solid red; */
 }
 
 .salida .container {
@@ -108,18 +103,7 @@ main {
     margin: 15px 0;
     font-weight: 300;
     color: #232323;
-    /* background-color: white; */
 }
-
-/* .salida .repo p::after {
-    content: " | ";
-    margin: 0 10px;
-    opacity: .4;
-}
-
-.salida .repo p:last-of-type::after {
-    content: "";
-} */
 
 .salida .filtro {
     margin: 0 auto;
@@ -186,15 +170,12 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        /* flex-wrap: wrap; */
     }
 
     .salida .repo {
         grid-row: 2 / 3;
         height: auto;
         max-height: 300px;
-        /* justify-content: center;
-        justify-items: center; */
     }
 
     .salida #filtro__resultados {
