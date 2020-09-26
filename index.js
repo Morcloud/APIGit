@@ -1,35 +1,29 @@
 
 
+const userName = document.getElementById('titulo')
+const photo = document.getElementById('fotografia')
+const name = document.getElementById("nombre")
+const API = `https://api.github.com/users`
 let datos
 
-function user(user) {
-    const userName = document.getElementById('titulo')
-    const photo = document.getElementById('fotografia')
-    const name = document.getElementById("nombre")
-
-    const ruta = 'https://api.github.com'
-    fetch(`${ruta}/users/${user}`)
-        .then(response => response.json())
-        .then(json => {
-            userName.innerHTML = json.login,
-            photo.src = json.avatar_url,
-            name.innerHTML = json.name
-        })
-    fetch(`${ruta}/users/${user}/repos`)
-        .then(response => response.json())
-        .then(data => {
-            datos = data
-            // let js = data.filter((rep) => rep.language === "JavaScript");
-            // console.log(js);
-            data.forEach(element => {
-                console.log(`Nombre: ${element.name}, lenguaje: ${element.language}`);
-                let padre = document.getElementById('repo')
-                let p = document.createElement('p')
-                p.innerHTML = `Proyecto: ${element.name} - Lenguaje: ${element.language}`
-                padre.appendChild(p)
-            });
-        })
+async function user(user) {
+    const usuarios = await fetch(`${API}/${user}`)
+    const response = await usuarios.json()
+    userName.innerHTML = response.login
+    photo.src = response.avatar_url
+    name.innerHTML = response.name
+    const repositorio = await fetch(`${API}/${user}/repos`)
+    const repo = await repositorio.json()
+    datos = repo
+    repo.forEach(element => {
+        console.log(`Nombre: ${element.name}, lenguaje: ${element.language}`);
+        let padre = document.getElementById('repo')
+        let p = document.createElement('p')
+        p.innerHTML = `Proyecto: ${element.name} - Lenguaje: ${element.language}`
+        padre.appendChild(p)
+    })
 }
+
 
 function traer() {
     const input = document.getElementById('usuario')
@@ -42,10 +36,12 @@ const mostrar = () => {
     let js = datos.filter((rep) => rep.language === input.value);
     console.log(js)
     js.forEach(element => {
-    //   console.log(`Nombre: ${element.name}, lenguaje: ${element.language}`)
         let padre = document.getElementById('filtro__resultados')
         let p = document.createElement('p')
         p.innerHTML = `Proyecto: ${element.name} - Lenguaje: ${element.language}`
         padre.appendChild(p)
     })
 }
+
+
+
